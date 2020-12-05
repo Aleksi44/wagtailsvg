@@ -68,3 +68,17 @@ Development env
     python manage.py migrate
     python manage.py init
     python manage.py runserver 0.0.0.0:4243
+
+
+Idea to contribute
+==================
+
+Let's help designers who use wagtail with :
+
+- Improvements of Wagtail Admin of `wagtailsvg`
+- Editing SVG files directly from `wagtailsvg/templates/modeladmin/wagtailsvg/edit.html`
+- With versioning of SVG files (like Page model?)
+- Import essential customizable SVG files easily ?
+- Import SVG files with a global styles conf ?
+
+Feel free to contact me at `hello@snoweb.fr`
