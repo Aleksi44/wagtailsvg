@@ -71,7 +71,7 @@ Development env
 
 
 Idea to contribute
-==================
+##################
 
 Let's help designers who use wagtail with :
 
