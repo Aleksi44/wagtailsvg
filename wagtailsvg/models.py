@@ -68,9 +68,10 @@ class Svg(CollectionMember, index.Indexed, models.Model):
     def save(self, *args, **kwargs):
         if self.edit_code and not self.data_changed(['file']):
             # Update file with edit_code
+
             self.file = ImageFile(
                 BytesIO(self.edit_code.encode()),
-                name=self.file.name
+                name=self.filename
             )
 
         # Keep empty `edit_code` to not save SVG content in database
