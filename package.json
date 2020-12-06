@@ -4,7 +4,9 @@
   "repository": "git@github.com:Aleksi44/wagtailsvg.git",
   "author": "Alexis LE BARON <hello@snoweb.fr>",
   "license": "GPL-3.0",
-  "dependencies": {},
+  "dependencies": {
+    "brace": "^0.11.1"
+  },
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",

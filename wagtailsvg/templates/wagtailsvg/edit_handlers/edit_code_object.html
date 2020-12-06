@@ -1,0 +1,11 @@
+<fieldset>
+    {% comment %}
+        TODO: Preview SVG here
+    {% endcomment %}
+    <ul class="fields">
+        <li>
+            <input id="svg_edit_code_input_hidden" name="edit_code" type="hidden">
+            <div id="svg_edit_code_input" style="height: 70vh">{{ self.instance.file_content|escape }}</div>
+        </li>
+    </ul>
+</fieldset>

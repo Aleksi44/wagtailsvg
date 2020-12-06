@@ -9,7 +9,8 @@
   "globals": {
     "document": false,
     "$": false,
-    "jQuery": false
+    "jQuery": false,
+    "ace": false
   },
   "env": {
     "browser": true,

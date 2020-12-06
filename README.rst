@@ -62,13 +62,29 @@ Add wagtailsvg to django apps installed :
 Development env
 ###############
 
+**If first run**
+
 ::
 
     git clone git@github.com:Aleksi44/wagtailsvg.git
     pip install -r requirements.txt
     python manage.py migrate
     python manage.py init
+
+
+**Run Django Server**
+
+::
+
     python manage.py runserver 0.0.0.0:4243
+
+
+**Run Webpack Server**
+
+::
+
+    yarn
+    yarn start
 
 
 Idea to contribute
@@ -76,10 +92,14 @@ Idea to contribute
 
 Let's help designers who use wagtail with :
 
-- Improvements of Wagtail Admin of `wagtailsvg`
-- Editing SVG files directly from `wagtailsvg/templates/modeladmin/wagtailsvg/edit.html`
-- With versioning of SVG files (like Page model?)
-- Import essential customizable SVG files easily ?
-- Import SVG files with a global styles conf ?
+- Improvements of Wagtail Admin in `wagtailsvg`
+- Import essential customizable SVG files easily with a command
+- Import SVG files with a global styles conf
 
 Feel free to contact me at `hello@snoweb.fr`
+
+**Last experimentation** :
+
+.. image:: https://media.snoweb.fr/www/documents/wagtail-svg-experiment-1.gif
+
+
