@@ -54,6 +54,7 @@ Add wagtailsvg to django apps installed :
 
     INSTALLED_APPS = [
         ...
+        'wagtail.contrib.modeladmin',
         'wagtailsvg',
     ]
 
