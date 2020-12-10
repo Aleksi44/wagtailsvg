@@ -1,6 +1,6 @@
-import json
-from django.utils.html import format_html, format_html_join, mark_safe
-from django.templatetags.static import static
+# import json
+# from django.utils.html import format_html, format_html_join, mark_safe
+# from django.templatetags.static import static
 from wagtail.contrib.modeladmin.options import (
     ModelAdmin,
     modeladmin_register
@@ -8,7 +8,9 @@ from wagtail.contrib.modeladmin.options import (
 from wagtail.core import hooks
 from wagtailsvg.views import SvgChooserViewSet
 from wagtailsvg.models import Svg
-from wagtailsvg import context
+
+
+# from wagtailsvg import context
 
 
 @hooks.register('register_admin_viewset')

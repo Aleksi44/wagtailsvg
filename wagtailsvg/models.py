@@ -11,7 +11,8 @@ from wagtail.search import index
 from wagtail.admin.edit_handlers import ObjectList
 from wagtail.admin.edit_handlers import FieldPanel
 
-from wagtailsvg.edit_handlers import EditCodePanel
+
+# from wagtailsvg.edit_handlers import EditCodePanel
 
 
 class Svg(CollectionMember, index.Indexed, models.Model):
