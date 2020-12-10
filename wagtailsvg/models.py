@@ -25,7 +25,7 @@ class Svg(CollectionMember, index.Indexed, models.Model):
         "file",
         "collection",
         "tags",
-        "edit_code"
+        # "edit_code"
     )
 
     edit_handler = TabbedInterface([
@@ -35,7 +35,7 @@ class Svg(CollectionMember, index.Indexed, models.Model):
             FieldPanel('file'),
             FieldPanel('tags'),
         ], heading="General"),
-        EditCodePanel()
+        # EditCodePanel()
     ])
 
     def __str__(self):

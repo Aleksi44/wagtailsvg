@@ -16,6 +16,7 @@ def register_site_chooser_viewset():
     return SvgChooserViewSet('svg_chooser', url_prefix='svg-chooser')
 
 
+"""
 @hooks.register('insert_editor_js')
 def edit_code_panel_js():
     cxt = json.dumps({
@@ -38,6 +39,7 @@ def edit_code_panel_js():
             "});" % cxt)
     )
     return js_includes + js_exec
+"""
 
 
 class SvgModelAdmin(ModelAdmin):
