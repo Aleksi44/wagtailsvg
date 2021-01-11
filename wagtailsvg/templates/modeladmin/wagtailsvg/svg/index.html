@@ -35,7 +35,7 @@
                         <li>
                             <a style="display: grid; height: 100%; width: 100%" class="image-choice" title="{{ svg.title }}"
                                href="{% url 'wagtailsvg_svg_modeladmin_edit' svg.id %}">
-                                <img style="margin:auto; width: 100%" src="{{ svg.url }}" alt="{{ svg.title }}"/>
+                                <img style="margin:auto; width: 100%; height: 100%;" src="{{ svg.url }}" alt="{{ svg.title }}"/>
                             </a>
                         </li>
                     {% endfor %}
