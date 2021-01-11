@@ -1,5 +1,8 @@
 from wagtailsvg.models import Svg
-from generic_chooser.views import ModelChooserViewSet, ChooserListingTabMixin
+from generic_chooser.views import \
+    ModelChooserViewSet, \
+    ChooserListingTabMixin, \
+    ModelChooserMixin
 
 
 class SvgChooserListingTab(ChooserListingTabMixin):
@@ -11,8 +14,20 @@ class SvgChooserListingTab(ChooserListingTabMixin):
         }
 
 
+class SvgModelChooserMixin(ModelChooserMixin):
+    def get_chosen_response_data(self, item):
+        """
+        Generate the result value to be returned when an object has been chosen
+        """
+        response_data = super().get_chosen_response_data(item)
+        response_data['preview_url'] = item.file.url
+        return response_data
+
+
 class SvgChooserViewSet(ModelChooserViewSet):
     model = Svg
     icon = 'image'
     page_title = "Choose a Svg"
     listing_tab_mixin_class = SvgChooserListingTab
+    chooser_mixin_class = SvgModelChooserMixin
+    edit_item_url_name = 'wagtailsvg_svg_modeladmin_edit'

@@ -12,10 +12,13 @@ function createChooserWidget(id, opts) {
   const docTitle = chooserElement.find('.title');
   const input = $(`#${id}`);
   const editLink = chooserElement.find('.edit-link');
+  const previewUrl = chooserElement.find('.preview-url');
 
   $('.action-choose', chooserElement).on('click', () => {
     const responses = {};
     responses[opts.modalWorkflowResponseName || 'chosen'] = function (snippetData) {
+      previewUrl.attr('src', snippetData.preview_url);
+      previewUrl.attr('alt', snippetData.string);
       input.val(snippetData.id);
       docTitle.text(snippetData.string);
       chooserElement.removeClass('blank');
