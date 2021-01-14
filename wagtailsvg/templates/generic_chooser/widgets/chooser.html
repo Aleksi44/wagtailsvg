@@ -13,7 +13,7 @@
         {% block chosen_state_view %}
             <div class="preview-image">
                 {% if item %}
-                    <img style="width: 100%" src="{{ item.url }}" alt="{{ item.title }}">
+                    <img class="preview-url" style="width: 100%" src="{{ item.url }}" alt="{{ item.title }}">
                 {% else %}
                     <img style="width: 100%" class="preview-url" alt="">
                 {% endif %}
