@@ -23,6 +23,16 @@ class SvgModelChooserMixin(ModelChooserMixin):
         response_data['preview_url'] = item.file.url
         return response_data
 
+    def get_object_list(self, search_term=None, **kwargs):
+        if search_term:
+
+            # TODO: Fix search backend (it does not filter correctly)
+            # search_backend = get_search_backend()
+            # object_list = search_backend.search(search_term, object_list)
+
+            return Svg.objects.filter(title__icontains=search_term)
+        return self.get_unfiltered_object_list()
+
 
 class SvgChooserViewSet(ModelChooserViewSet):
     model = Svg

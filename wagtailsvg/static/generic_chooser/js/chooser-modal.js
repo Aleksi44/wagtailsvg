@@ -38,9 +38,11 @@ GENERIC_CHOOSER_MODAL_ONLOAD_HANDLERS = {
     $('form.chooser-search', modal.body).on('submit', search);
 
     $('#id_q').on('input', function () {
-      if (searchRequest) {
+      // TODO: searchRequest seem to be always == undefined or null
+      // TODO: request seem to be == undefined
+      /*if (searchRequest) {
         request.abort();
-      }
+      }*/
       clearTimeout($.data(this, 'timer'));
       const wait = setTimeout(search, 50);
       $(this).data('timer', wait);
