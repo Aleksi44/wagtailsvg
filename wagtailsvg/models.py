@@ -17,9 +17,16 @@ from wagtail.admin.edit_handlers import FieldPanel
 
 class Svg(CollectionMember, index.Indexed, models.Model):
     upload_directory = 'svg'
-    storage = FileSystemStorage(location=settings.MEDIA_ROOT, base_url=settings.MEDIA_URL)
+    storage = FileSystemStorage(
+        location=settings.MEDIA_ROOT,
+        base_url=settings.MEDIA_URL
+    )
     title = models.CharField(max_length=255, verbose_name=_("title"))
-    file = models.FileField(upload_to=upload_directory, verbose_name=_("file"), storage=storage)
+    file = models.FileField(
+        upload_to=upload_directory,
+        verbose_name=_("file"),
+        storage=storage
+    )
     tags = TaggableManager(help_text=None, blank=True, verbose_name=_("tags"))
     edit_code = models.TextField(default='', blank=True)
 
