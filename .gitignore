@@ -98,3 +98,4 @@ dmypy.json
 node_modules/
 mediafiles/
 media/
+/svg/
