@@ -11,10 +11,22 @@ class SvgChooserBlock(ChooserBlock):
     @cached_property
     def widget(self):
         from wagtailsvg.widgets import AdminSvgChooser
-        return AdminSvgChooser
+        return AdminSvgChooser()
 
     def render_basic(self, value, context=None):
         return "<img src='%s' alt='%s'>" % (
             value.url,
             value.title
         )
+
+    def get_form_state(self, value):
+        value_data = self.widget.get_value_data(value)
+        if value_data is None:
+            return None
+        else:
+            return {
+                'id': value_data['id'],
+                'edit_link': value_data['edit_url'],
+                'title': value_data['title'],
+                'preview_url': value_data['preview_url'],
+            }

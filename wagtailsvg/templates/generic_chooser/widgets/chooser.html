@@ -7,13 +7,13 @@
 {% endcomment %}
 <div id="{{ attrs.id }}-chooser"
      class="chooser image-chooser {% if not value %}blank{% endif %}"
-     {% if choose_modal_url %}data-choose-modal-url="{{ choose_modal_url }}"{% endif %}>
+     data-choose-modal-url="{% url 'svg_chooser:choose' %}">
 
     <div class="chosen">
         {% block chosen_state_view %}
             <div class="preview-image">
-                {% if item %}
-                    <img class="preview-url" style="width: 100%" src="{{ item.url }}" alt="{{ item.title }}">
+                {% if value %}
+                    <img class="preview-url" style="width: 100%" src="{{ preview_url }}" alt="{{ title }}">
                 {% else %}
                     <img style="width: 100%" class="preview-url" alt="">
                 {% endif %}
@@ -46,5 +46,3 @@
 </div>
 
 {{ original_field_html }}
-
-
