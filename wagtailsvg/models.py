@@ -50,7 +50,7 @@ class Svg(CollectionMember, index.Indexed, models.Model):
     def file_content(self):
         if self.file:
             # TODO: condition if external url
-            f = default_storage.open(self.url[1:], 'r')
+            f = default_storage.open(self.file.name, 'r')
             return f.read()
         return ''
 
