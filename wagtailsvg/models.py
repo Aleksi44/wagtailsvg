@@ -17,7 +17,7 @@ from wagtail.admin.edit_handlers import FieldPanel
 
 class Svg(CollectionMember, index.Indexed, models.Model):
     title = models.CharField(max_length=255, verbose_name=_("title"))
-    file = models.FileField(upload_to="media", verbose_name=_("file"))
+    file = models.FileField(upload_to="svg", verbose_name=_("file"))
     tags = TaggableManager(help_text=None, blank=True, verbose_name=_("tags"))
     edit_code = models.TextField(default='', blank=True)
 
