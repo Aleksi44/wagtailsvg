@@ -38,7 +38,7 @@ WELCOME_TEXT = \
     <h1>Welcome on Wagtail Yoast SEO</h1>
     <h2>
     Log in
-    <a href="http://localhost:8080/wagtail/" target="_blank">
+    <a href="http://127.0.0.1:4243/wagtail/" target="_blank">
     Wagtail Admin
     </a>
     with :
