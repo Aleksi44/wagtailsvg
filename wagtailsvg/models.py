@@ -30,7 +30,6 @@ class Svg(CollectionMember, index.Indexed, models.Model):
         "file",
         "collection",
         "tags",
-        # "edit_code"
     )
 
     edit_handler = TabbedInterface([
