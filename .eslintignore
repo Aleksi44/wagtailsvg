@@ -1,8 +1,0 @@
-wagtailsvg/static/wagtailsvg/dist
-wagtailsvg/static/generic_chooser/js/chooser-widget.js
-wagtailsvg/static/generic_chooser/js/chooser-modal.js
-build
-conf
-mediafiles
-node_modules
-tests
