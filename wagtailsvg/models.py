@@ -15,12 +15,16 @@ from wagtail.admin.edit_handlers import FieldPanel
 
 from taggit.managers import TaggableManager
 
+
 # from wagtailsvg.edit_handlers import EditCodePanel
 
 
 class Svg(CollectionMember, index.Indexed, models.Model):
     title = models.CharField(max_length=255, verbose_name=_("title"))
-    file = models.FileField(upload_to=getattr(settings, 'WAGTAILSVG_UPLOAD_FOLDER', 'media'), verbose_name=_("file"))
+    file = models.FileField(
+        upload_to=getattr(settings, 'WAGTAILSVG_UPLOAD_FOLDER', 'media'),
+        verbose_name=_("file")
+    )
     tags = TaggableManager(help_text=None, blank=True, verbose_name=_("tags"))
     edit_code = models.TextField(default='', blank=True)
 
