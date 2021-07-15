@@ -14,7 +14,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn lint && flake8"
+      "pre-push": "flake8"
     }
   },
   "devDependencies": {
