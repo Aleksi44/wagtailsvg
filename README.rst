@@ -58,6 +58,12 @@ Add wagtailsvg to django apps installed :
         'wagtailsvg',
     ]
 
+Set the SVG download folder in the Django settings
+::
+
+    WAGTAILSVG_UPLOAD_FOLDER = 'svg'
+
+Default value is 'media'
 
 Development env
 ###############

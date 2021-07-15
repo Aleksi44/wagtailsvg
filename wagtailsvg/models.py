@@ -1,23 +1,26 @@
 import os
 from io import BytesIO
-from taggit.managers import TaggableManager
+
 from django.core.files.storage import default_storage
 from django.core.files.images import ImageFile
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.conf import settings
+
 from wagtail.core.models import CollectionMember
 from wagtail.admin.edit_handlers import TabbedInterface
 from wagtail.search import index
 from wagtail.admin.edit_handlers import ObjectList
 from wagtail.admin.edit_handlers import FieldPanel
 
+from taggit.managers import TaggableManager
 
 # from wagtailsvg.edit_handlers import EditCodePanel
 
 
 class Svg(CollectionMember, index.Indexed, models.Model):
     title = models.CharField(max_length=255, verbose_name=_("title"))
-    file = models.FileField(upload_to="media", verbose_name=_("file"))
+    file = models.FileField(upload_to=getattr(settings, 'WAGTAILSVG_UPLOAD_FOLDER', 'media'), verbose_name=_("file"))
     tags = TaggableManager(help_text=None, blank=True, verbose_name=_("tags"))
     edit_code = models.TextField(default='', blank=True)
 
@@ -50,7 +53,7 @@ class Svg(CollectionMember, index.Indexed, models.Model):
     def file_content(self):
         if self.file:
             # TODO: condition if external url
-            f = default_storage.open(self.url[1:], 'r')
+            f = default_storage.open(self.file.name, 'r')
             return f.read()
         return ''
 
