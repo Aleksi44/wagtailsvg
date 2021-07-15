@@ -16,9 +16,6 @@ from wagtail.admin.edit_handlers import FieldPanel
 from taggit.managers import TaggableManager
 
 
-# from wagtailsvg.edit_handlers import EditCodePanel
-
-
 class Svg(CollectionMember, index.Indexed, models.Model):
     title = models.CharField(max_length=255, verbose_name=_("title"))
     file = models.FileField(
