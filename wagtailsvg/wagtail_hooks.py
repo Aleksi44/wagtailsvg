@@ -1,47 +1,31 @@
-# import json
-# from django.utils.html import format_html, format_html_join, mark_safe
-# from django.templatetags.static import static
 from wagtail.contrib.modeladmin.options import (
     ModelAdmin,
     modeladmin_register
 )
 from wagtail.core import hooks
+from wagtail.admin.site_summary import SummaryItem
 from wagtailsvg.views import SvgChooserViewSet
 from wagtailsvg.models import Svg
 
 
-# from wagtailsvg import context
+class SvgSummaryItem(SummaryItem):
+    order = 290
+    template = "wagtailsvg/homepage/site_summary_svg.html"
+
+    def get_context(self):
+        return {
+            "total_svg": Svg.objects.count(),
+        }
+
+
+@hooks.register("construct_homepage_summary_items")
+def add_svg_summary_item(request, items):
+    items.append(SvgSummaryItem(request))
 
 
 @hooks.register('register_admin_viewset')
 def register_site_chooser_viewset():
     return SvgChooserViewSet('svg_chooser', url_prefix='svg-chooser')
-
-
-"""
-@hooks.register('insert_editor_js')
-def edit_code_panel_js():
-    cxt = json.dumps({
-        'version': context.VERSION,
-    })
-    js_files = [
-        'wagtailsvg/dist/js/app%s.js' % context.VERSION,
-    ]
-    js_includes = format_html_join(
-        '\n',
-        '<script src="{0}"></script>',
-        ((static(filename),) for filename in js_files)
-    )
-    js_exec = format_html(
-        "<script>{}</script>",
-        mark_safe(
-            "$(function() {"
-            "const panel = new WagtailSvg.EditCodePanel(%s);"
-            "panel.init();"
-            "});" % cxt)
-    )
-    return js_includes + js_exec
-"""
 
 
 class SvgModelAdmin(ModelAdmin):
