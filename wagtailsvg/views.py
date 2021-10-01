@@ -41,3 +41,4 @@ class SvgChooserViewSet(ModelChooserViewSet):
     listing_tab_mixin_class = SvgChooserListingTab
     chooser_mixin_class = SvgModelChooserMixin
     edit_item_url_name = 'wagtailsvg_svg_modeladmin_edit'
+    per_page = 10
