@@ -25,6 +25,9 @@ class Svg(CollectionMember, index.Indexed, models.Model):
     tags = TaggableManager(help_text=None, blank=True, verbose_name=_("tags"))
     edit_code = models.TextField(default='', blank=True)
 
+    class Meta:
+        ordering = ['-id']
+
     admin_form_fields = (
         "title",
         "file",
