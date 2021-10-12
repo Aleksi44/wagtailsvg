@@ -1,4 +1,5 @@
 from django.utils.functional import cached_property
+from django.utils.html import format_html
 from wagtail.core.blocks import ChooserBlock
 
 
@@ -14,10 +15,10 @@ class SvgChooserBlock(ChooserBlock):
         return AdminSvgChooser()
 
     def render_basic(self, value, context=None):
-        return "<img src='%s' alt='%s'>" % (
-            value.url,
-            value.title
-        )
+        if value:
+            return format_html("<img src='{0}' alt='{1}'>", value.url, value.title)
+        else:
+            return ''
 
     def get_form_state(self, value):
         value_data = self.widget.get_value_data(value)
