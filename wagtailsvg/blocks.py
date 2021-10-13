@@ -16,7 +16,11 @@ class SvgChooserBlock(ChooserBlock):
 
     def render_basic(self, value, context=None):
         if value:
-            return format_html("<img src='{0}' alt='{1}'>", value.url, value.title)
+            return format_html(
+                "<img src='{0}' alt='{1}'>",
+                value.url,
+                value.title
+            )
         else:
             return ''
 
