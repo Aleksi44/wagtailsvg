@@ -17,7 +17,8 @@ Wagtail SVG
 - **SvgChooserBlock** : ChooserBlock for StreamField
 
 Can be used like this :
-::
+
+.. code-block:: python
 
     from wagtailsvg.models import Svg
     from wagtailsvg.blocks import SvgChooserBlock
@@ -50,7 +51,8 @@ Install with pip :
 ``pip install wagtailsvg``
 
 Add wagtailsvg to django apps installed :
-::
+
+.. code-block:: python
 
     INSTALLED_APPS = [
         ...
@@ -59,7 +61,8 @@ Add wagtailsvg to django apps installed :
     ]
 
 Set the SVG download folder in the Django settings
-::
+
+.. code-block:: python
 
     WAGTAILSVG_UPLOAD_FOLDER = 'svg'
 
