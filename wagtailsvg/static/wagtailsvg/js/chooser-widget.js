@@ -55,7 +55,6 @@ ChooserWidget.prototype.openModal = function() {
 };
 
 ChooserWidget.prototype.setState = function(newState) {
-    console.log(newState)
     if (newState && newState.value !== null && newState.value !== '') {
         this.inputElement.val(newState.value);
         this.titleElement.text(newState.title);
