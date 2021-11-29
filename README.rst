@@ -106,7 +106,7 @@ Let's help designers who use wagtail with :
 - Import essential customizable SVG files easily with a command
 - Import SVG files with a global styles conf
 
-Feel free to contact me at `hello@snoweb.fr`
+Feel free to contact me at `hello@snoweb.io`
 
 **Last experimentation** :
 
