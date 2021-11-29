@@ -55,9 +55,10 @@ Add wagtailsvg to django apps installed :
 .. code-block:: python
 
     INSTALLED_APPS = [
-        ...
-        'wagtail.contrib.modeladmin',
         'wagtailsvg',
+        'wagtail.contrib.modeladmin',
+        'generic_chooser',
+        ...
     ]
 
 Set the SVG download folder in the Django settings

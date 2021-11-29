@@ -18,3 +18,6 @@ deploy:
 patch:
 	npm version patch
 	git push --tags origin master
+
+loc:
+	python manage.py makemessages --ignore build -l en -l fr && python manage.py compilemessages

@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'wagtail.contrib.frontend_cache',
     'wagtail.contrib.modeladmin',
     'taggit',
+    'generic_chooser',
 
     'django.contrib.admin',
     'django.contrib.auth',
