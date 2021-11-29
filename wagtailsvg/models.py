@@ -23,7 +23,6 @@ class Svg(CollectionMember, index.Indexed, models.Model):
         verbose_name=_("file")
     )
     tags = TaggableManager(help_text=None, blank=True, verbose_name=_("tags"))
-    edit_code = models.TextField(default='', blank=True)
 
     class Meta:
         ordering = ['-id']
@@ -42,7 +41,6 @@ class Svg(CollectionMember, index.Indexed, models.Model):
             FieldPanel('file'),
             FieldPanel('tags'),
         ], heading="General"),
-        # EditCodePanel()
     ])
 
     def __str__(self):
@@ -53,55 +51,5 @@ class Svg(CollectionMember, index.Indexed, models.Model):
         return os.path.basename(self.file.name)
 
     @property
-    def file_content(self):
-        if self.file:
-            # TODO: condition if external url
-            f = default_storage.open(self.file.name, 'r')
-            return f.read()
-        return ''
-
-    @property
     def url(self):
         return self.file.url
-
-    @classmethod
-    def from_db(cls, db, field_names, values):
-        instance = super().from_db(db, field_names, values)
-        instance._state.adding = False
-        instance._state.db = db
-        instance._old_values = dict(zip(field_names, values))
-        return instance
-
-    def save(self, *args, **kwargs):
-        if self.edit_code and not self.data_changed(['file']):
-            # Update file with edit_code
-
-            self.file = ImageFile(
-                BytesIO(self.edit_code.encode()),
-                name=self.filename
-            )
-
-        # Keep empty `edit_code` to not save SVG content in database
-        self.edit_code = ''
-        super(Svg, self).save(*args, **kwargs)
-
-    def data_changed(self, fields):
-        """
-        example:
-        if self.data_changed(['street', 'city', 'country']):
-            print("one of the fields changed")
-        returns true if the model saved the first time
-        and _old_values doesnt exist
-        :param fields:
-        :return:
-        """
-        if hasattr(self, '_old_values'):
-            if not self.pk or not self._old_values:
-                return True
-
-            for field in fields:
-                if getattr(self, field) != self._old_values[field]:
-                    return True
-            return False
-
-        return True
