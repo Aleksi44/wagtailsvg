@@ -1,8 +1,4 @@
 import os
-from io import BytesIO
-
-from django.core.files.storage import default_storage
-from django.core.files.images import ImageFile
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
