@@ -10,7 +10,7 @@ from wagtailsvg.models import Svg
 
 class SvgSummaryItem(SummaryItem):
     order = 290
-    template = "wagtailsvg/homepage/site_summary_svg.html"
+    template_name = "wagtailsvg/homepage/site_summary_svg.html"
 
     def get_context_data(self, parent_context):
         return {
