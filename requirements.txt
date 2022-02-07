@@ -1,4 +1,4 @@
-django>=3.1.4
-wagtail==2.15.1
+Django==4.0.2
+wagtail==2.16
 flake8>=3.8.4
 wagtail-generic-chooser==0.3.1
