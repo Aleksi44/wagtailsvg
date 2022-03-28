@@ -97,19 +97,12 @@ Development env
     yarn start
 
 
-Idea to contribute
-##################
+Snoweb SVG
+##########
 
-Let's help designers who use wagtail with :
+To integrate SVG icons on Wagtail, I created Snoweb SVG with +2000 optimized SVG.
+Check the `SVG library <https://github.com/Aleksi44/snoweb-svg>`_.
 
-- Improvements of Wagtail Admin in `wagtailsvg`
-- Import essential customizable SVG files easily with a command
-- Import SVG files with a global styles conf
+Feel free to contact me at `hello@snoweb.io`.
 
-Feel free to contact me at `hello@snoweb.io`
-
-**Last experimentation** :
-
-.. image:: https://media.snoweb.fr/www/documents/wagtail-svg-experiment-1.gif
-
-
+Made with ❤ by `Snoweb <https://www.snoweb.io/fr/>`_.
