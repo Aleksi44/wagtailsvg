@@ -2,7 +2,12 @@ from wagtail.contrib.modeladmin.options import (
     ModelAdmin,
     modeladmin_register
 )
-from wagtail.core import hooks
+
+try:
+    from wagtail import hooks
+except ImportError:
+    from wagtail.core import hooks
+
 from wagtail.admin.site_summary import SummaryItem
 from wagtailsvg.views import SvgChooserViewSet
 from wagtailsvg.models import Svg

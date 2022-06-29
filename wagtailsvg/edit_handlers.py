@@ -1,4 +1,7 @@
-from wagtail.admin.edit_handlers import BaseChooserPanel
+try:
+    from wagtail.admin.panels import BaseChooserPanel
+except ImportError:
+    from wagtail.admin.edit_handlers import BaseChooserPanel
 
 
 class SvgChooserPanel(BaseChooserPanel):
