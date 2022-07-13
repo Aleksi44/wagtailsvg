@@ -1,7 +1,11 @@
 import requests
 from io import BytesIO
 from django.core.files.images import ImageFile
-from wagtail.core.blocks import RichTextBlock
+
+try:
+    from wagtail.blocks import RichTextBlock
+except ImportError:
+    from wagtail.core.blocks import RichTextBlock
 
 from wagtailsvg.models import Svg
 from wagtailsvg.blocks import SvgChooserBlock

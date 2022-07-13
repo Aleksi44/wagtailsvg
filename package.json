@@ -1,6 +1,6 @@
 {
   "name": "wagtailsvg",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "repository": "git@github.com:Aleksi44/wagtailsvg.git",
   "author": "Alexis LE BARON <hello@snoweb.fr>",
   "license": "GPL-3.0",

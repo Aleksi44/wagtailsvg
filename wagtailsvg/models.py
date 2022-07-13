@@ -3,11 +3,18 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 
-from wagtail.core.models import CollectionMember
-from wagtail.admin.edit_handlers import TabbedInterface
 from wagtail.search import index
-from wagtail.admin.edit_handlers import ObjectList
-from wagtail.admin.edit_handlers import FieldPanel
+
+try:
+    from wagtail.models import CollectionMember
+    from wagtail.admin.panels import TabbedInterface
+    from wagtail.admin.panels import ObjectList
+    from wagtail.admin.panels import FieldPanel
+except ImportError:
+    from wagtail.core.models import CollectionMember
+    from wagtail.admin.edit_handlers import TabbedInterface
+    from wagtail.admin.edit_handlers import ObjectList
+    from wagtail.admin.edit_handlers import FieldPanel
 
 from taggit.managers import TaggableManager
 
