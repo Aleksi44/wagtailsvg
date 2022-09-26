@@ -50,7 +50,7 @@ Install with pip :
 
 ``pip install wagtailsvg``
 
-Add wagtailsvg to django apps installed :
+Add these to django apps installed :
 
 .. code-block:: python
 
