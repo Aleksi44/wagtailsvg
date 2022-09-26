@@ -18,11 +18,15 @@ except ImportError:
 
 from taggit.managers import TaggableManager
 
+def get_svg_upload_to_folder(instance, filename):
+    folder = settings.WAGTAILSVG_UPLOAD_FOLDER or 'media'
+    return os.path.join(folder, filename)
+
 
 class Svg(CollectionMember, index.Indexed, models.Model):
     title = models.CharField(max_length=255, verbose_name=_("title"))
     file = models.FileField(
-        upload_to=getattr(settings, 'WAGTAILSVG_UPLOAD_FOLDER', 'media'),
+        upload_to=get_svg_upload_to_folder,
         verbose_name=_("file")
     )
     tags = TaggableManager(help_text=None, blank=True, verbose_name=_("tags"))
