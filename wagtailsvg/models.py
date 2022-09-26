@@ -18,6 +18,7 @@ except ImportError:
 
 from taggit.managers import TaggableManager
 
+
 def get_svg_upload_to_folder(instance, filename):
     folder = settings.WAGTAILSVG_UPLOAD_FOLDER or 'media'
     return os.path.join(folder, filename)
