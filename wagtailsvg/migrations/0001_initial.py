@@ -3,7 +3,10 @@
 from django.db import migrations, models
 import django.db.models.deletion
 import taggit.managers
-import wagtail.core.models
+try:
+    import wagtail.models as wagtail_models
+except ImportError:
+    import wagtail.core.models as wagtail_models
 import wagtail.search.index
 
 
@@ -23,7 +26,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=255, verbose_name='title')),
                 ('file', models.FileField(upload_to='media', verbose_name='file')),
-                ('collection', models.ForeignKey(default=wagtail.core.models.get_root_collection_id, on_delete=django.db.models.deletion.CASCADE, related_name='+', to='wagtailcore.collection', verbose_name='collection')),
+                ('collection', models.ForeignKey(default=wagtail_models.get_root_collection_id, on_delete=django.db.models.deletion.CASCADE, related_name='+', to='wagtailcore.collection', verbose_name='collection')),
                 ('tags', taggit.managers.TaggableManager(blank=True, help_text=None, through='taggit.TaggedItem', to='taggit.Tag', verbose_name='tags')),
             ],
             options={

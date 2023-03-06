@@ -3,7 +3,10 @@
 from django.db import migrations, models
 import django.db.models.deletion
 import tests.blocks
-import wagtail.core.fields
+try:
+    from wagtail.fields import StreamField
+except ImportError:
+    from wagtail.core.fields import StreamField
 
 
 class Migration(migrations.Migration):
@@ -20,7 +23,7 @@ class Migration(migrations.Migration):
             name='TestPage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.page')),
-                ('body', wagtail.core.fields.StreamField([('text', tests.blocks.TextBlock()), ('svg', tests.blocks.SvgBlock())], blank=True)),
+                ('body', StreamField([('text', tests.blocks.TextBlock()), ('svg', tests.blocks.SvgBlock())], blank=True, use_json_field=True)),
                 ('logo', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailsvg.svg')),
             ],
             options={
