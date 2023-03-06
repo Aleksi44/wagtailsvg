@@ -27,7 +27,7 @@ class TestPage(Page):
     body = StreamField([
         ('text', TextBlock()),
         ('svg', SvgBlock()),
-    ], blank=True)
+    ], blank=True, use_json_field=True)
 
     content_panels = Page.content_panels + [
         SvgChooserPanel('logo'),

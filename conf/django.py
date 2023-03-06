@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'wagtail.images',
     'wagtail.search',
     'wagtail.admin',
-    'wagtail.core',
+    'wagtail',
     'wagtail.contrib.settings',
     'wagtail.contrib.frontend_cache',
     'wagtail.contrib.modeladmin',
@@ -96,3 +96,5 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = BASE_DIR
 MEDIA_URL = '/'
+
+WAGTAILSVG_UPLOAD_FOLDER = 'svg'
