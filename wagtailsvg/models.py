@@ -18,9 +18,16 @@ except ImportError:
 
 from taggit.managers import TaggableManager
 
+from django.core.files.storage import storages
+
+
+def get_storage_backend():
+    key = getattr(settings, "WAGTAILSVG_STORAGE_KEY", "default")
+    return storages[key]
+
 
 def get_svg_upload_to_folder(instance, filename):
-    folder = settings.WAGTAILSVG_UPLOAD_FOLDER or 'media'
+    folder = settings.WAGTAILSVG_UPLOAD_FOLDER or "media"
     return os.path.join(folder, filename)
 
 
@@ -28,12 +35,13 @@ class Svg(CollectionMember, index.Indexed, models.Model):
     title = models.CharField(max_length=255, verbose_name=_("title"))
     file = models.FileField(
         upload_to=get_svg_upload_to_folder,
-        verbose_name=_("file")
+        verbose_name=_("file"),
+        storage=get_storage_backend(),
     )
     tags = TaggableManager(help_text=None, blank=True, verbose_name=_("tags"))
 
     class Meta:
-        ordering = ['-id']
+        ordering = ["-id"]
 
     admin_form_fields = (
         "title",
@@ -42,14 +50,19 @@ class Svg(CollectionMember, index.Indexed, models.Model):
         "tags",
     )
 
-    edit_handler = TabbedInterface([
-        ObjectList([
-            FieldPanel('collection'),
-            FieldPanel('title'),
-            FieldPanel('file'),
-            FieldPanel('tags'),
-        ], heading="General"),
-    ])
+    edit_handler = TabbedInterface(
+        [
+            ObjectList(
+                [
+                    FieldPanel("collection"),
+                    FieldPanel("title"),
+                    FieldPanel("file"),
+                    FieldPanel("tags"),
+                ],
+                heading="General",
+            ),
+        ]
+    )
 
     def __str__(self):
         return self.title
