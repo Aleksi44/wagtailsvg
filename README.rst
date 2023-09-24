@@ -67,7 +67,14 @@ Set the SVG download folder in the Django settings
 
     WAGTAILSVG_UPLOAD_FOLDER = 'svg'
 
-Default value is 'media'
+
+Set the SVG storage backend by specifing the storage key for the setting `STORAGES <https://docs.djangoproject.com/en/4.2/ref/settings/#storages>`_
+
+.. code-block:: python
+
+    WAGTAILSVG_STORAGE_KEY = 'local'
+
+Default value is 'default'
 
 Development env
 ###############
