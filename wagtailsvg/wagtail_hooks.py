@@ -6,7 +6,7 @@ from wagtail.contrib.modeladmin.options import (
 try:
     from wagtail import hooks
 except ImportError:
-    from wagtail.core import hooks
+    from wagtail import hooks
 
 from wagtail.admin.site_summary import SummaryItem
 from wagtailsvg.views import SvgChooserViewSet

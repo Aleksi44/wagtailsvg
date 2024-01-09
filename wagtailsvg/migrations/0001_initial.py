@@ -6,7 +6,7 @@ import taggit.managers
 try:
     import wagtail.models as wagtail_models
 except ImportError:
-    import wagtail.core.models as wagtail_models
+    import wagtail.models as wagtail_models
 import wagtail.search.index
 
 

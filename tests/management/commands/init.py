@@ -7,7 +7,7 @@ from wagtailsvg.models import Svg
 try:
     from wagtail.models import Page, Site
 except ImportError:
-    from wagtail.core.models import Page, Site
+    from wagtail.models import Page, Site
 
 from tests.models import TestPage
 from tests.blocks import TextBlock, SvgBlock

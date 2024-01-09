@@ -5,7 +5,7 @@ from django.core.files.images import ImageFile
 try:
     from wagtail.blocks import RichTextBlock
 except ImportError:
-    from wagtail.core.blocks import RichTextBlock
+    from wagtail.blocks import RichTextBlock
 
 from wagtailsvg.models import Svg
 from wagtailsvg.blocks import SvgChooserBlock

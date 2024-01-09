@@ -6,7 +6,7 @@ import tests.blocks
 try:
     from wagtail.fields import StreamField
 except ImportError:
-    from wagtail.core.fields import StreamField
+    from wagtail.fields import StreamField
 
 
 class Migration(migrations.Migration):

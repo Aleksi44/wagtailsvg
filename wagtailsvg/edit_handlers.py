@@ -10,7 +10,7 @@ try:
             self.permission = permission
 
 except ImportError:
-    from wagtail.admin.edit_handlers import BaseChooserPanel
+    from wagtail.admin.panels import BaseChooserPanel
 
     class SvgChooserPanel(BaseChooserPanel):
         object_type_name = "svg"

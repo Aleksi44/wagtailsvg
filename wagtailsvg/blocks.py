@@ -4,7 +4,7 @@ from django.utils.html import format_html
 try:
     from wagtail.blocks import ChooserBlock
 except ImportError:
-    from wagtail.core.blocks import ChooserBlock
+    from wagtail.blocks import ChooserBlock
 
 
 class SvgChooserBlock(ChooserBlock):

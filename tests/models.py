@@ -5,9 +5,9 @@ try:
     from wagtail.models import Page
     from wagtail.admin.panels import FieldPanel as StreamFieldPanel
 except ImportError:
-    from wagtail.core.fields import StreamField
-    from wagtail.core.models import Page
-    from wagtail.admin.edit_handlers import StreamFieldPanel
+    from wagtail.fields import StreamField
+    from wagtail.models import Page
+    from wagtail.admin.panels import StreamFieldPanel
 
 from wagtailsvg.edit_handlers import SvgChooserPanel
 from wagtailsvg.models import Svg
