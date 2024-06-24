@@ -2,3 +2,4 @@ Django>=4.1.7
 wagtail>=4.1
 flake8>=3.8.4
 wagtail-generic-chooser==0.5.1
+wagtail-modeladmin==2.0.0

@@ -50,13 +50,15 @@ Install with pip :
 
 ``pip install wagtailsvg``
 
-Add these to django apps installed :
+Add these to django apps installed. Only add the modeladmin line
+corresponding the the wagtail version you are using.
 
 .. code-block:: python
 
     INSTALLED_APPS = [
         'wagtailsvg',
-        'wagtail.contrib.modeladmin',
+        'wagtail.contrib.modeladmin', # only for wagtail <5.2
+        'wagtail_modeladmin',  # only for wagtail >=5.2
         'generic_chooser',
         ...
     ]
