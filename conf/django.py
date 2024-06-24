@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'wagtail',
     'wagtail.contrib.settings',
     'wagtail.contrib.frontend_cache',
-    'wagtail.contrib.modeladmin',
+    'wagtail_modeladmin',
     'taggit',
     'generic_chooser',
 
