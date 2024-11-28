@@ -56,7 +56,7 @@ Add these to django apps installed :
 
     INSTALLED_APPS = [
         'wagtailsvg',
-        'wagtail.contrib.modeladmin',
+        'wagtail_modeladmin',
         'generic_chooser',
         ...
     ]
